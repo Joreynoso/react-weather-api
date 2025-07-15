@@ -34,6 +34,7 @@ const SearchForm = () => {
                         id="city"
                         type="text"
                         value={city}
+                        autoComplete='off'
                         placeholder="Type a city name to search..."
                         onChange={(e) => setCity(e.target.value)}
                         className="w-2/3 px-4 py-2 placeholder-white text-white focus:outline-none focus:ring-0 focus:border-transparent"
@@ -41,11 +42,24 @@ const SearchForm = () => {
 
                     <button
                         type="submit"
-                        className='flex justify-center items-center p-2 rounded-full bg-[#001026]/30 cursor-pointer'>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-white">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        className="flex justify-center items-center p-2 rounded-full bg-[#001026]/30 cursor-pointer transition-colors hover:bg-[#001026]/60"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-6 text-white"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                            />
                         </svg>
                     </button>
+
                 </div>
             </form>
         </>
