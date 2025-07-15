@@ -1,7 +1,7 @@
 // --> import components
 import DisplayController from './components/DisplayController'
 import SearchForm from './components/SearchForm'
-
+import Footer from './components/Footer'
 
 function App() {
 
@@ -13,9 +13,11 @@ function App() {
         {/* search & card */}
         <SearchForm />
         <DisplayController />
+
+        <Footer />
       </div>
     </>
-    
+
   )
 }
 
