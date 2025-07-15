@@ -1,74 +1,12 @@
-# ☀️ App del Clima con React
+# React + Vite
 
-Aplicación desarrollada para practicar React, consumo de APIs externas, manejo de estado global con Context API, diseño modular, visualización dinámica de datos y control de errores. Utiliza la API de OpenWeather para consultar el clima actual de cualquier ciudad ingresada por el usuario.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🛠 Tecnologías utilizadas
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- ⚛️ **React (Vite)** — Framework moderno para construir interfaces reactivas y rápidas.
-- 💨 **Tailwind CSS** — Framework de utilidades para estilos rápidos y responsivos.
-- 🔄 **Hooks personalizados y Context API** — Para manejo de estado global y lógica centralizada.
-- 🌐 **OpenWeather API** — Fuente externa de datos climáticos en tiempo real.
-- 🚦 **Estados UI controlados** — Para manejar `loading`, `error` y `data` desde un componente controlador.
-- 🧩 **Arquitectura modular** — Componentes organizados por responsabilidad.
-- 📦 **fetch / axios** — Para realizar peticiones HTTP externas.
+## Expanding the ESLint configuration
 
----
-
-## 🌈 Funcionalidades principales
-
-🔍 **Búsqueda de ciudad**  
-El usuario puede ingresar cualquier ciudad (principalmente de Argentina) para consultar su clima actual.
-
-☁️ **Consumo de API externa**  
-Se utiliza `fetch` o `axios` para obtener los datos desde OpenWeather en tiempo real.
-
-📊 **Visualización del clima**  
-Muestra información meteorológica como:
-- Temperatura actual
-- Temperatura mínima y máxima
-- Humedad
-- Velocidad del viento
-- Nubosidad
-- Ícono representativo del estado del clima
-
-⚙️ **Manejo de estados**  
-- `loading`: muestra un spinner o animación mientras se cargan los datos.  
-- `error`: renderiza mensajes de error personalizados (ciudad no encontrada, campo vacío, etc.).  
-- `data`: muestra los datos correctamente formateados.
-
-🧠 **Diseño modular y escalable**  
-Los componentes están divididos según su responsabilidad:
-- `SearchForm`: campo de búsqueda.
-- `DisplayController`: determina qué vista mostrar (clima, error o carga).
-- `WeatherCard`: visualización del clima.
-- `ErrorCard`: manejo de errores.
-- `LoadingCard`: animación de carga.
-- `WeatherContext`: lógica de negocio, estado global y fetch centralizado.
-- `useWeather`: hook personalizado para manejar la lógica del clima.
-
----
-
-## 🔗 Links
-
-- 🌐 **Live Link (Netlify / Vercel / etc.)**: [Ver proyecto en línea](#)
-- 📁 **Vista previa (local)**: Ejecutar el proyecto con `npm run dev`
-
----
-
-## 📸 Capturas (opcional)
-
-![Aplicación](./screenshots/screen_app.png)
-![Diagrama](./screenshots/screen_diagrama.png)
-
----
-
-## 🧑‍💻 Autor
-
-Desarrollado por **José Reynoso**
-
----
-
-## 📄 Licencia
-Este proyecto se distribuye bajo la Licencia MIT.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
