@@ -8,7 +8,7 @@ const SearchForm = () => {
 
     // --> setting states
     const [city, setCity] = useState('')
-    const { setError, getWeather } = useWeather()
+    const { setError, getWeather, clearWeather } = useWeather()
 
     // --> handleSubmit
     function handleSubmit(e) {
@@ -20,6 +20,7 @@ const SearchForm = () => {
         if (city.trim() === "") {
             console.log("--> [SEARCHFORM ERROR] Empty field from form")
             setError("please enter a city")
+            clearWeather() // --> clean weather data to preven re-render
             return
         }
         return getWeather(city)
@@ -29,7 +30,9 @@ const SearchForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit} className='w-full mb-4'>
-                <div className='max-w-md w-full mx-auto border border-sky-400 rounded-full flex justify-between py-2 px-2'>
+                <div className='max-w-md w-full mx-auto border border-sky-500 rounded-full flex items-center py-2 px-2'>
+
+                    {/* Input ocupa todo el ancho restante */}
                     <input
                         id="city"
                         type="text"
@@ -37,12 +40,13 @@ const SearchForm = () => {
                         autoComplete='off'
                         placeholder="Type a city name to search..."
                         onChange={(e) => setCity(e.target.value)}
-                        className="w-2/3 px-4 py-2 placeholder-white text-white focus:outline-none focus:ring-0 focus:border-transparent"
+                        className="flex-1 px-4 py-2 placeholder-white text-white bg-transparent focus:outline-none"
                     />
 
+                    {/* Botón ocupa solo lo necesario */}
                     <button
                         type="submit"
-                        className="flex justify-center items-center p-2 rounded-full bg-[#001026]/30 cursor-pointer transition-colors hover:bg-[#001026]/60"
+                        className="flex justify-center items-center p-2 rounded-full bg-[#001026]/30 cursor-pointer transition-colors hover:bg-[#001026]/60 flex-shrink-0"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +63,6 @@ const SearchForm = () => {
                             />
                         </svg>
                     </button>
-
                 </div>
             </form>
         </>

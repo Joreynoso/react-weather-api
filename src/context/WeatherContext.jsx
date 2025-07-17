@@ -15,7 +15,6 @@ export const WeatherProvider = ({ children }) => {
     const getWeather = async (city) => {
         setLoading(true)
         setError(null)
-        setWeatherData(null) // --> to clear state befor new search
 
         // --> await to fetch response to continue
         try {
@@ -29,8 +28,14 @@ export const WeatherProvider = ({ children }) => {
         }
     }
 
+    /// --> clearWeather status & error 
+    const clearWeather = () => {
+        setWeatherData(null)
+        setError(null)
+    }
+
     return (
-        <WeatherContext.Provider value={{ weatherData, loading, error, getWeather, setError }}>
+        <WeatherContext.Provider value={{ weatherData, loading, error, getWeather, clearWeather, setError }}>
             {children}
         </WeatherContext.Provider>
     )

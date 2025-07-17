@@ -1,3 +1,4 @@
+// --> import context
 import { useWeather } from "../context/WeatherContext";
 
 // --> import icon paths dictionary
@@ -8,6 +9,9 @@ import formatWeatherTime from '../services/formatWeatherTime';
 
 // --> import components
 import { IconSun, IconMoon } from './Icons';
+
+// --> import motion
+import { motion } from 'framer-motion';
 
 const CardWeather = () => {
 
@@ -26,13 +30,21 @@ const CardWeather = () => {
     // Get icon URL based on weather icon code
     const urlPath = iconsPath[icon];
 
+    // -> log destructuring result
+    console.log('--> [ DATA FROM DESTRUCTURING ]', weatherData)
+
     return (
         <>
-            <div className="max-w-md w-full mx-auto rounded-2xl flex flex-col items-center gap-2 mb-6">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                className="max-w-md w-full mx-auto rounded-2xl flex flex-col items-center gap-2 mb-6"
+            >
 
                 {/* Weather icon */}
                 <div className="w-full flex justify-center items-center">
-                    {icon && <img src={urlPath} alt={icon} />}
+                    {icon && <img src={urlPath} alt={icon}/>}
                 </div>
 
                 {/* Current temperature */}
@@ -113,7 +125,7 @@ const CardWeather = () => {
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
         </>
     );
 };
