@@ -52,7 +52,7 @@ Los componentes están divididos según su responsabilidad:
 
 ## 🔗 Links
 
-- 🌐 **Live Link (Netlify / Vercel / etc.)**: [Ver proyecto en línea](#)
+- 🌐 **Live Link (Netlify / Vercel / etc.)**: [Ver proyecto en línea](https://charming-rugelach-216d50.netlify.app/)
 - 📁 **Vista previa (local)**: Ejecutar el proyecto con `npm run dev`
 
 ---
