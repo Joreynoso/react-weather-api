@@ -18,6 +18,10 @@ export const WeatherProvider = ({ children }) => {
 
         // --> await to fetch response to continue
         try {
+            if (!city) {
+                setError("Missing city or country");
+            }
+
             const response = await fetchWeather(city)
             setWeatherData(response) // --> setting response to state
         } catch (error) {

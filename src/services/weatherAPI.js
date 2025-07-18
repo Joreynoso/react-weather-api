@@ -26,6 +26,6 @@ export const fetchWeather = async (city) => {
 
       // another errors
       throw new Error(`Error ${status}: ${data.message}`)
-    }
+    } 
   }
 }

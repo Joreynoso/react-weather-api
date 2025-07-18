@@ -23,7 +23,7 @@ const SearchForm = () => {
             clearWeather() // --> clean weather data to preven re-render
             return
         }
-        return getWeather(city)
+        return getWeather(city.trim())
     }
 
     // --> form to search a city
