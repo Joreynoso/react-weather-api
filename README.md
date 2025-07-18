@@ -60,15 +60,5 @@ Los componentes están divididos según su responsabilidad:
 ## 📸 Capturas (opcional)
 
 ![App](./public/screenshots/screen_app.png)
-![Diagrama](./public/screenshots/screen_diagrama.png.png)
+![Diagrama](./public/screenshots/screen_diagrama.png)
 ---
-
-## 🧑‍💻 Autor
-
-Desarrollado por **José Reynoso** — [GitHub](#) • [LinkedIn](#) • [Portafolio](#)
-
----
-
-## 📄 Licencia
-
-Este proyecto se distribuye bajo la Licencia MIT.
